@@ -41,12 +41,12 @@ class FriendViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     //"테이블뷰"에서는("테이블뷰컨" 아님 주의!)
-    //넘버오브어쩌구, 셀포엣, 하잇포 등등 메서드들 왜 안나오지? //이건 테이블뷰컨이 아니니까
+    //넘버오브어쩌구, 셀포엣, 하잇포 등등의 메서드들은 왜 안나오지? //이건 테이블뷰컨이 아니니까
     //테이블뷰는 부하직원이라 하자 : 사실 넘버오브는 부하직원(테이블뷰)의 부하직원들(UITableViewDelegate, UITableViewDataSource)이 갖고 있던거였음.
     //테블뷰 단독사용시 별도 정의가 필요 // UITableViewDelegate, UITableViewDataSource라는 넘버오브어쩌구(메서드)를 갖고 있는 2마리의 부하직원이 필요 //메서드 호출해서 사용
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print(#function) //안찍힘.. //한 단계가 빠짐 : 부하직원들을 인식시켜줘야함
+        print(#function) //안찍힘.. //한 단계가 빠짐 : 부하직원들을 "인식"시켜줘야함
         //return FriendsInfo().list.count //매번 공간을 만드는 형식이라 안좋아 //그래서 아래처럼 뷰디드로드 위에서 인스턴스 생성 후 접근
         return list.count
     }
@@ -83,7 +83,7 @@ class FriendViewController: UIViewController, UITableViewDelegate, UITableViewDa
         let vc = sb.instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
         
         
-        //2단계
+        //값 전달 2단계
         //vc.name = "JACK"
         vc.name = list[indexPath.row].name
         vc.message =  list[indexPath.row].message
@@ -91,6 +91,7 @@ class FriendViewController: UIViewController, UITableViewDelegate, UITableViewDa
         //위에 3개의 반찬들의 반찬통 자체를 넘기면 안되나
         vc.profile = list[indexPath.row] //통째로 보내기
    
+        
         present(vc, animated: true)
     }
     
