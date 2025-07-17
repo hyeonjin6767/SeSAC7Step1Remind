@@ -62,7 +62,6 @@ class ViewController: UIViewController {
         
         //화면 전환하면서 데이터를 전달하기 위한 순서2. contents라는 다음 화면의 공간에 내용을 넣어주기
         vc.contents = "닉네임 \(Int.random(in: 1...100))"
-        
         present(vc, animated: true)
     }
     

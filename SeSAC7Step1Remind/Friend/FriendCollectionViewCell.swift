@@ -9,9 +9,19 @@ import UIKit
 
 class FriendCollectionViewCell: UICollectionViewCell {
 
+    @IBOutlet var profileImagView: UIImageView!
+    @IBOutlet var nameLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
+        profileImagView.backgroundColor = .yellow
+        profileImagView.contentMode = .scaleAspectFill
+        
+        nameLabel.textAlignment = .center
+        nameLabel.font = .boldSystemFont(ofSize: 17)
+        
+        
     }
 
 }

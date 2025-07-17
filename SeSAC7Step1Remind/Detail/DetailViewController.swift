@@ -29,7 +29,6 @@ class DetailViewController: UIViewController {
         //myLabel.text = "\(name), \(message ?? "상메 없음"), \(phone ?? 0)"
         //통째로 받은거 사용
         myLabel.text = "\(profile.name), \(profile.message ?? "상메 없음"), \(profile.phone ?? 0)"
-        
     }
      
 }
